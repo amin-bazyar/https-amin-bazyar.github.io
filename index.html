@@ -163,7 +163,18 @@ form button.btn{font:inherit;font-weight:500;cursor:pointer}
   function t(o){return o?(o[lang]||o.en||''):'';}
   function mk(tag,cls,txt){var e=document.createElement(tag);if(cls){e.className=cls;}if(txt!==undefined){e.textContent=txt;}return e;}
 
-  function load(){return fetch('content.json',{cache:'no-cache'}).then(function(r){return r.json();});}
+  function load(){
+  var url = new URL('./content.json?v=2', window.location.href);
+
+  return fetch(url.toString(), {
+    cache: 'no-store'
+  }).then(function(r){
+    if (!r.ok) {
+      throw new Error('content.json HTTP error: ' + r.status);
+    }
+    return r.json();
+  });
+}
 
   function render(){
     document.querySelectorAll('[data-k]').forEach(function(el){el.textContent=t(g(el.getAttribute('data-k')));});
@@ -190,10 +201,27 @@ form button.btn{font:inherit;font-weight:500;cursor:pointer}
     var ml=$('#mail');ml.href='mailto:'+C.email;ml.textContent=C.email;
   }
   function setLang(l){
-    lang=l;root.lang=l;root.dir=(l==='fa')?'rtl':'ltr';
-    try{localStorage.setItem('lang',l);}catch(e){}
+  lang = (l === 'fa') ? 'fa' : 'en';
+
+  root.setAttribute('lang', lang);
+  root.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
+
+  try {
+    localStorage.setItem('lang', lang);
+  } catch(e) {}
+
+  try {
     render();
+  } catch(e) {
+    console.error('Render error:', e);
+
+    var er = $('#err');
+    if (er) {
+      er.hidden = false;
+      er.textContent = 'Language error: ' + e.message;
+    }
   }
+}
   $('#lang').addEventListener('click',function(){setLang(lang==='fa'?'en':'fa');});
 
   var f=$('#fb'),st=$('#fbs');
