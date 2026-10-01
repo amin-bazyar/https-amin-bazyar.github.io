@@ -1,0 +1,230 @@
+{
+  "email": "aminbazyar1999@gmail.com",
+  "github": "https://github.com/amin-bazyar",
+  "linkedin": "https://www.linkedin.com/in/amin-bazyar",
+  "formEndpoint": "https://formsubmit.co/ajax/d13c9b8d31df03d94c2aa686d9d6192a",
+  "title": {
+    "en": "Amin Bazyar - AI Engineer",
+    "fa": "امین بازیار -  مهندس هوش مصنوعی "
+  },
+  "name": {
+    "en": "Amin Bazyar",
+    "fa": "امین بازیار"
+  },
+  "nav": {
+    "about": {
+      "en": "About",
+      "fa": "درباره من"
+    },
+    "projects": {
+      "en": "Projects",
+      "fa": "پروژه‌ها"
+    },
+    "skills": {
+      "en": "Skills",
+      "fa": "مهارت‌ها"
+    },
+    "resume": {
+      "en": "Resume",
+      "fa": "رزومه"
+    },
+    "contact": {
+      "en": "Contact",
+      "fa": "تماس"
+    }
+  },
+  "toggle": {
+    "en": "فارسی",
+    "fa": "English"
+  },
+  "role": {
+    "en": "AI Engineer",
+    "fa": "مهندس هوش مصنوعی "
+  },
+  "sub": {
+    "en": "I build systems that read, see, and answer: computer vision, Persian NLP, LLMs, and retrieval-augmented generation.",
+    "fa": "سیستم‌هایی می‌سازم که می‌خوانند، می‌بینند و پاسخ می‌دهند: بینایی ماشین، پردازش زبان طبیعی فارسی، LLM و RAG."
+  },
+  "cta1": {
+    "en": "See my projects",
+    "fa": "مشاهده پروژه‌ها"
+  },
+  "cta2": {
+    "en": "Get in touch",
+    "fa": "تماس با من"
+  },
+  "aboutH": {
+    "en": "About",
+    "fa": "درباره من"
+  },
+  "about1": {
+  "en": "I'm an AI Engineer focused on building practical AI systems that connect models with real-world data. My foundation is in machine learning, deep learning, and time series, with a particular focus on Computer Vision, Natural Language Processing (NLP), and Large Language Models (LLMs).",
+  "fa": "من مهندس هوش مصنوعی هستم و روی ساخت سیستم‌های کاربردی هوش مصنوعی تمرکز دارم؛ سیستم‌هایی که مدل‌ها را به داده‌های واقعی و مسائل دنیای واقعی متصل می‌کنند. پایه‌ی تخصصی من در یادگیری ماشین، یادگیری عمیق و سری‌های زمانی شکل گرفته و تمرکز اصلی‌ام روی بینایی ماشین (Computer Vision)، پردازش زبان طبیعی (NLP) و مدل‌های زبانی بزرگ (LLM) است."
+},
+"about2": {
+  "en": "My work includes building a custom Persian tokenizer, developing RAG-based applications, and working with real-world data to create AI systems that can understand, retrieve, and generate useful information. I also care about what happens beyond model training. Through hands-on MLOps experience, I work with clean project structures, reproducible environments, CI/CD, monitoring, and deployment to turn experiments into maintainable and usable systems.",
+  "fa": "در پروژه‌هایم روی توسعه‌ی راهکارهای واقعی کار کرده‌ام؛ از جمله ساخت یک توکنایزر فارسی اختصاصی و توسعه‌ی برنامه‌های مبتنی بر RAG که می‌توانند اطلاعات را از داده‌های واقعی بازیابی کرده و پاسخ‌های کاربردی تولید کنند. برای من، توسعه‌ی یک مدل پایان کار نیست. در زمینه‌ی MLOps تجربه‌ی عملی دارم و با ساختاردهی تمیز پروژه، محیط‌های قابل‌تکرار، CI/CD، مانیتورینگ و استقرار کار می‌کنم تا ایده‌ها و آزمایش‌ها را به سیستم‌هایی قابل استفاده و نگهداری تبدیل کنم."
+},
+  "projectsH": {
+    "en": "Projects",
+    "fa": "پروژه‌ها"
+  },
+  "projects": [
+    {
+      "zip": "snapfood-rag-chatbot",
+      "tags": "RAG, FastAPI, LLM, Persian NLP",
+      "name": {
+        "en": "SnapFood RAG Chatbot",
+        "fa": "چت‌بات RAG اسنپ‌فود"
+      },
+      "desc": {
+        "en": "A FastAPI chatbot that answers questions from SnapFood customer comments using retrieval-augmented generation, with a deployable service architecture.",
+        "fa": "یک چت‌بات FastAPI که با استفاده از RAG از نظرات مشتریان اسنپ‌فود به سؤال‌ها پاسخ می‌دهد، با معماری سرویس قابل استقرار."
+      }
+    },
+    {
+      "zip": "",
+      "tags": "",
+      "name": {
+        "en": "",
+        "fa": ""
+      },
+      "desc": {
+        "en": "",
+        "fa": ""
+      }
+    },
+    {
+      "zip": "mini-gpt",
+      "tags": "LLM, Tokenization, PyTorch",
+      "name": {
+        "en": "Mini-GPT with a Persian tokenizer",
+        "fa": "Mini-GPT با توکنایزر فارسی"
+      },
+      "desc": {
+        "en": "A small GPT model built together with a custom Persian tokenizer, developed as a team project with Mahdieh Gholedarzadeh.",
+        "fa": "یک مدل GPT کوچک همراه با توکنایزر فارسی اختصاصی، به‌صورت پروژه‌ی تیمی با مهدیه گله‌دارزاده."
+      }
+    },
+    {
+      "zip": "",
+      "tags": "",
+      "name": {
+        "en": "",
+        "fa": ""
+      },
+      "desc": {
+        "en": "",
+        "fa": ""
+      }
+    }
+  ],
+  "dl": {
+    "en": "Download project ZIP",
+    "fa": "دانلود ZIP پروژه"
+  },
+  "moreBefore": {
+    "en": "More on ",
+    "fa": "پروژه‌های بیشتر را در "
+  },
+  "moreAfter": {
+    "en": ".",
+    "fa": " ببین."
+  },
+  "skillsH": {
+    "en": "Skills",
+    "fa": "مهارت‌ها"
+  },
+  "skills": [
+    {
+      "h": {
+        "en": "Language models",
+        "fa": "مدل‌های زبانی"
+      },
+      "p": {
+        "en": "LLMs, RAG pipelines, embeddings, prompt design, Persian text processing",
+        "fa": "LLM، پایپ‌لاین RAG، embedding، طراحی prompt، پردازش متن فارسی"
+      }
+    },
+    {
+      "h": {
+        "en": "Computer vision",
+        "fa": "بینایی ماشین"
+      },
+      "p": {
+        "en": "OpenCV, MediaPipe, real-time detection from video streams",
+        "fa": "OpenCV، MediaPipe، تشخیص لحظه‌ای روی جریان ویدیو"
+      }
+    },
+    {
+      "h": {
+        "en": "Engineering",
+        "fa": "مهندسی نرم‌افزار"
+      },
+      "p": {
+        "en": "Python, FastAPI, MLOps practices, Jupyter, Google Colab, VS Code,Docker,Mlflow",
+        "fa": "Python، FastAPI، رویه‌های MLOps، Jupyter، Google Colab، VS Code،Docker،Mlflow"
+      }
+    },
+    {
+  "h": { "en": "MLOps and time series", "fa": "MLOps و سری‌های زمانی" },
+  "p": { "en": "CI/CD pipelines, service monitoring, time series analysis", "fa": "پایپ‌لاین CI/CD، مانیتورینگ سرویس، تحلیل سری‌های زمانی" }
+}
+  ],
+  "resumeH": {
+    "en": "Resume",
+    "fa": "رزومه"
+  },
+  "resumeP": {
+    "en": "A one-page summary of my experience, projects, and education.",
+    "fa": "خلاصه‌ی یک‌صفحه‌ای از تجربه‌ها، پروژه‌ها و تحصیلات من."
+  },
+  "resumeBtn": {
+    "en": "Download resume (PDF)",
+    "fa": "دانلود رزومه (PDF)"
+  },
+  "contactH": {
+    "en": "Contact",
+    "fa": "تماس"
+  },
+  "contactP": {
+    "en": "I am looking for a Machine Learning Engineer role. The best way to reach me is by email or LinkedIn.",
+    "fa": "دنبال موقعیت شغلی مهندس یادگیری ماشین هستم. بهترین راه ارتباط ایمیل یا LinkedIn است."
+  },
+  "fbH": {
+    "en": "Have feedback or a suggestion?",
+    "fa": "نقد یا پیشنهاد دارید؟"
+  },
+  "fbP": {
+    "en": "Leave a message and your email, and it will be sent straight to me.",
+    "fa": "پیام و ایمیلتان را بنویسید تا مستقیم برای من ارسال شود."
+  },
+  "fbName": {
+    "en": "Name (optional)",
+    "fa": "نام (اختیاری)"
+  },
+  "fbEmail": {
+    "en": "Your email",
+    "fa": "ایمیل شما"
+  },
+  "fbMsg": {
+    "en": "Message",
+    "fa": "پیام"
+  },
+  "fbSend": {
+    "en": "Send",
+    "fa": "ارسال"
+  },
+  "fbWait": {
+    "en": "Sending...",
+    "fa": "در حال ارسال..."
+  },
+  "fbOk": {
+    "en": "Thank you, your message was sent.",
+    "fa": "ممنون، پیام شما ارسال شد."
+  },
+  "fbErr": {
+    "en": "Could not send. Please try again, or email me directly.",
+    "fa": "ارسال نشد. لطفاً دوباره تلاش کنید یا مستقیم ایمیل بزنید."
+  }
+}
