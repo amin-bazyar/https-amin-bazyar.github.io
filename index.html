@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Amin Bazyar - Machine Learning Engineer</title>
+<title>Amin Bazyar - AI Engineer</title>
 <meta name="description" content="Portfolio of Amin Bazyar, Machine Learning Engineer: computer vision, Persian NLP, LLMs and RAG.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=IBM+Plex+Sans:wght@400;500&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=IBM+Plex+Sans:wght@400;500&family=Vazirmatn:wght@400;500;700&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=IBM+Plex+Sans:wght@400;500&family=Vazirmatn:wght@400;500;700&display=swap"></noscript>
 <style>
 :root{
   --bg:#f6f3ec;--card:#fffdf8;--ink:#14182b;--mute:#575d78;
@@ -78,8 +79,13 @@ form button.btn{font:inherit;font-weight:500;cursor:pointer}
   .row{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-#err{padding:24px;color:#b3261e}
+#err{position:fixed;top:0;left:0;right:0;z-index:99;background:#fff;color:#b3261e;padding:12px 16px;font:13px/1.5 monospace;direction:ltr;text-align:left;word-break:break-word}
 </style>
+<script>
+function showErr(m){var b=document.getElementById('err');if(b){b.hidden=false;b.textContent=m;}}
+window.addEventListener('error',function(e){showErr('Error: '+e.message+' ('+String(e.filename||'').split('/').pop()+':'+e.lineno+')');});
+window.addEventListener('unhandledrejection',function(e){showErr('Error: '+(e.reason&&e.reason.message?e.reason.message:e.reason));});
+</script>
 </head>
 <body>
 <nav><div class="wrap">
@@ -163,18 +169,7 @@ form button.btn{font:inherit;font-weight:500;cursor:pointer}
   function t(o){return o?(o[lang]||o.en||''):'';}
   function mk(tag,cls,txt){var e=document.createElement(tag);if(cls){e.className=cls;}if(txt!==undefined){e.textContent=txt;}return e;}
 
-  function load(){
-  var url = new URL('./content.json?v=2', window.location.href);
-
-  return fetch(url.toString(), {
-    cache: 'no-store'
-  }).then(function(r){
-    if (!r.ok) {
-      throw new Error('content.json HTTP error: ' + r.status);
-    }
-    return r.json();
-  });
-}
+  function load(){return fetch('content.json?v='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok){throw new Error('content.json HTTP '+r.status);}return r.json();});}
 
   function render(){
     document.querySelectorAll('[data-k]').forEach(function(el){el.textContent=t(g(el.getAttribute('data-k')));});
@@ -201,27 +196,18 @@ form button.btn{font:inherit;font-weight:500;cursor:pointer}
     var ml=$('#mail');ml.href='mailto:'+C.email;ml.textContent=C.email;
   }
   function setLang(l){
-  lang = (l === 'fa') ? 'fa' : 'en';
-
-  root.setAttribute('lang', lang);
-  root.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
-
-  try {
-    localStorage.setItem('lang', lang);
-  } catch(e) {}
-
-  try {
-    render();
-  } catch(e) {
-    console.error('Render error:', e);
-
-    var er = $('#err');
-    if (er) {
-      er.hidden = false;
-      er.textContent = 'Language error: ' + e.message;
+    lang=(l==='fa')?'fa':'en';
+    root.lang=lang;root.dir=(lang==='fa')?'rtl':'ltr';
+    try{render();}
+    catch(err){
+      showErr('Language error: '+err.message);
+      lang='en';root.lang='en';root.dir='ltr';
+      try{localStorage.removeItem('lang');}catch(e){}
+      try{render();}catch(e2){}
+      return;
     }
+    try{localStorage.setItem('lang',lang);}catch(e){}
   }
-}
   $('#lang').addEventListener('click',function(){setLang(lang==='fa'?'en':'fa');});
 
   var f=$('#fb'),st=$('#fbs');
@@ -241,17 +227,21 @@ form button.btn{font:inherit;font-weight:500;cursor:pointer}
 
   load().then(function(j){
     C=j;
-    var saved=null;try{saved=localStorage.getItem('lang');}catch(e){}
+    var saved=null;
+    try{
+      if(/[?&]lang=en/.test(location.search)){localStorage.removeItem('lang');}
+      saved=localStorage.getItem('lang');
+    }catch(e){}
     setLang(saved==='fa'?'fa':'en');
-  }).catch(function(){
-    var er=$('#err');er.hidden=false;
-    er.textContent='content.json could not be loaded. Open the site through a local server (VS Code Live Server) or after uploading it to the host.';
+  }).catch(function(e){
+    showErr('content.json could not be loaded: '+(e&&e.message?e.message:e));
   });
 })();
 </script>
 <script>
 (function(){
 var root=document.documentElement;
+try{
 if(!window.THREE){return;}
   var hero=document.getElementById('hero');
   var renderer=new THREE.WebGLRenderer({canvas:document.getElementById('c'),alpha:true,antialias:true});
@@ -301,6 +291,7 @@ if(!window.THREE){return;}
   }
   tick();
 
+}catch(e){}
 })();
 </script>
 </body>
